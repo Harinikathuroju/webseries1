@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab || www.codinglabweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class ="name"><a> <img src="Free_Sample_By_Wix (2).jpg" width="150" height="100" margin : "auto"> </a></div>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Signup</header>
+        <form action="#" name="SignForm">
+          <input type="text" id="fullname" placeholder="Full name" required />
+          <input type="text" id="email" placeholder="Email address" required />
+          <input type="password" id ="password12" placeholder="Password" required />
+          <div class="checkbox">
+            <input type="checkbox" id="signupCheck" />
+            <label for="signupCheck">I accept all terms & conditions</label>
+          </div>
+          <input type="submit" value="Signup" onclick="sign()" />
+          
+        </form>
+        <script>
+          function sign()
+          {
+          const signemail = document.getElementById('email');
+          const signpassword = document.getElementById('password12');
+          alert("signed successfully");
+          }
+        </script>
+      </div>
+      <div class="form login">
+        <header>Login</header>
+        <form class="login_form" action="index.html" method="get" name="loginForm" onsubmit="return check(this.form)">
+        <input type="text" name="loginemail" placeholder="Email address" required />
+          <input type="password" name="loginpassword" placeholder="Password" required />
+          <a href="#">Forgot password?</a>
+          <button type="submit" onclick="return check(this.form)">Login</button>
+          <script language="javascript">
+            function check(form)
+		        {
+	          	if((form.loginemail.value == "harini" && form.loginpassword.value == "2451-21-733-087"))
+	          	{
+                  alert("logged in");
+		            	return true;
+		          }
+	          	else
+		          {
+  
+		          	alert("Error Password or Username");
+		          	return false;
+		          }
+		        }
+          </script>
+        </form>
+      </div>
+      
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+      </script>
+    </section>
+  </body>
+</html>
